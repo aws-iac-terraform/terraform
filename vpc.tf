@@ -14,11 +14,11 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "public" {
   # length関数でsubnet_cidrsの数を取得し、その数ぶん繰り返し実行する
-  count = "${length(var.subnet_cidrs)}"
+  count = length(var.subnet_cidrs)
 
-  vpc_id = "${aws_vpc.main.id}"
+  vpc_id = aws_vpc.main.id
 
   # 現在の実行回数をcount.indexで取得でき、それをインデックスとして配列から値を取得する
-  availability_zone = "${var.azs[count.index]}"
-  cidr_block        = "${var.subnet_cidrs[count.index]}"
+  availability_zone = var.azs[count.index]
+  cidr_block        = var.subnet_cidrs[count.index]
 }
