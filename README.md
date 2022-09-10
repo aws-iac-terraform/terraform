@@ -91,3 +91,8 @@ export AWS_DEFAULT_REGION="ap-northeast-1"
 ~~~
 aws sts get-caller-identity --query Account --output text
 ~~~
+
+マージ済みブランチは削除する設定
+~~~
+git config --global fetch.prune true
+~~~
