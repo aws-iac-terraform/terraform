@@ -1,2 +1,3 @@
 aws_credential.sh
 .terraform*
+terraform*
