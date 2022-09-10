@@ -96,3 +96,8 @@ aws sts get-caller-identity --query Account --output text
 ~~~
 git config --global fetch.prune true
 ~~~
+
+ローカルのマージ済みブランチの削除
+~~~
+git branch --merged | egrep -v "\*|main}" | xargs git branch -d
+~~~
