@@ -113,3 +113,6 @@ git branch --merged | egrep -v "\*|main}" | xargs git branch -d
 
 ## TerraformのバックエンドをTerraform cloudに設定
 https://zoo200.net/terraform-backend-terraformcloud/#toc8
+
+## GitHubからTerraformCloudを利用する
+https://learn.hashicorp.com/tutorials/terraform/github-actions
