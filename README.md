@@ -1,5 +1,7 @@
 # terraform
 
+## aws cliのインストール
+
 ## tfenvのインストール
 
 ### tfenvのインストール
@@ -82,9 +84,16 @@ touch aws_credential.sh
 
 ファイル内には認証情報を設定
 ~~~
+#!/bin/bash
+
 export AWS_ACCESS_KEY_ID="XXXXXXXXXXXXXXXXXXXXXXXX"
 export AWS_SECRET_ACCESS_KEY="XXXXXXXXXXXXXXXXXXXXXXXX"
 export AWS_DEFAULT_REGION="ap-northeast-1"
+~~~
+
+環境変数の設定
+~~~
+source aws_credential.sh
 ~~~
 
 認証情報が設定されているかを確認。正常に設定されていればAWSのアカウントIDが表示される
@@ -101,3 +110,6 @@ git config --global fetch.prune true
 ~~~
 git branch --merged | egrep -v "\*|main}" | xargs git branch -d
 ~~~
+
+## TerraformのバックエンドをTerraform cloudに設定
+https://zoo200.net/terraform-backend-terraformcloud/#toc8
